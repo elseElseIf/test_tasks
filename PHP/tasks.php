@@ -50,4 +50,29 @@ class NumericInput extends TextInput {
     }
 }
 
+// 3 zadanie
+
+class RankingTable {
+    private $players = array();
+    private $record = array();
+
+    public function __construct($players) {
+        $this->players = $players;
+    }
+
+    public function recordResult($player, $result) {
+        $this->record[$player] = $result;
+    }
+}
+
+
+// $table = new RankingTable(array('Jan', 'Maks', 'Monika'));
+// $table->recordResult('Jan', 2);
+// $table->recordResult('Maks', 3);
+// $table->recordResult('Monika', 5);
+// echo $table->playerRank(1);
+
+// 4 zadanie
+
+
 ?>
