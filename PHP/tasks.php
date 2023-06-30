@@ -81,5 +81,34 @@ class RankingTable {
 
 // 4 zadanie
 
+// tezaurus:
+// array("market" => array("trade"), "small" => array("little", "compact"))
+
+// echo $thesaurus->getSynonyms("small"); --> '{"word":"small","synonyms":["little","compact"]}'
+// echo $thesaurus->getSynonyms("asleast"); --> '{"word":"asleast","synonyms":[]}'
+
+class Tezaurus {
+    private $dictionary = array();
+
+    //save dictionary tezaurus
+    public function __construct($dictionary) {
+        $this->dictionary = $dictionary;
+    }
+
+    public function getSynonyms($word) {
+        if (array_key_exists($word, $this->dictionary)) {
+            $synonyms = $this->dictionary[$word];
+        } else {
+            $synonyms = array();
+        }
+
+        $searchResults = array(
+            'word' => $word,
+            'synonyms' => $synonyms
+        );
+
+        return json_encode($searchResults);
+    }
+}
 
 ?>
