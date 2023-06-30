@@ -63,6 +63,13 @@ class RankingTable {
     public function recordResult($player, $result) {
         $this->record[$player] = $result;
     }
+
+    public function playerRank($rank) {
+        arsort($this->record);
+        $topPlayers = array_keys($this->record);
+
+        return $topPlayers[$rank - 1];
+    }
 }
 
 
